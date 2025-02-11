@@ -1,4 +1,3 @@
-package org.p11combinedforce.terraformCI
 
 import org.p11combinedforce.terraformCI.*
 import org.p11combinedforce.common.*
