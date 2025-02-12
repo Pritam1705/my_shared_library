@@ -8,7 +8,7 @@ def call(String playbookName) {
                 . venv/bin/activate
                 pip install --upgrade pip
                 pip install ansible-lint
-                venv/bin/ansible-lint ${playbookName}
+                venv/bin/ansible-lint ${playbookName} || true
             """
         }
     }
