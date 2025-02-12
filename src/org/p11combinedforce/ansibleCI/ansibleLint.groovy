@@ -4,12 +4,12 @@ def call(String playbookName) {
     stage("Lint Check") {
         script {
             sh """
-                if ! command -v ansible-lint &> /dev/null; then
-                    pip install --user ansible-lint
-                fi
-                ansible-lint ${playbookName}
+                python3 -m venv venv
+                . venv/bin/activate
+                pip install --upgrade pip
+                pip install ansible-lint
+                venv/bin/ansible-lint ${playbookName}
             """
         }
     }
 }
-
