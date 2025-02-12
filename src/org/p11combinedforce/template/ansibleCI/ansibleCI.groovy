@@ -1,17 +1,11 @@
-package org.p11combinedforce.ansibleCI
+package org.p11combinedforce.template.ansibleCI
 
 import org.p11combinedforce.ansibleCI.*
 import org.p11combinedforce.common.*
 
-def call(String url, String branch, String creds, String playbookName) {
-
-    // Create instances of required classes
-     def gitCheckOut = new gitCheckOut()
-     def wsClean=new wsClean()
-     def SyntaxCheck=new SyntaxCheck()
-
-    // Call methods with correct arguments
-    wsClean.call()
-    gitCheckOut.call(url, branch, creds)  
-    SyntaxCheck.call(playbookName)
+def call(String url, String branch, String creds, String playbookPath) {
+    // Call utility functions
+    wsClean()
+    gitCheckOut(url, branch, creds)
+    SyntaxCheck(playbookPath)
 }
